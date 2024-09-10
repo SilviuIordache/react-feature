@@ -1,11 +1,11 @@
 import './App.css'
-import { ReactLifecycle } from './ReactLifecycle'
-
+import { UseMemo } from './UseMemo'
 function App() {
 
   return (
     <div className="light">
-      <ReactLifecycle/>
+      {/* <ReactLifecycle/> */}
+      <UseMemo/>
     </div>
   )
 }
