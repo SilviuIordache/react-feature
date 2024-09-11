@@ -1,11 +1,12 @@
 import './App.css'
-import { UseMemo } from './UseMemo'
+import { UseCallback } from './UseCallback'
 function App() {
 
   return (
     <div className="light">
       {/* <ReactLifecycle/> */}
-      <UseMemo/>
+      {/* <UseMemo/> */}
+      <UseCallback/>
     </div>
   )
 }
