@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
 
-interface MemoisedChildComponentProps {
+interface MethodCallerProps {
   expensiveHandler: () => void;
 }
 
-export const MemoisedChildComponent = React.memo(
-  ({ expensiveHandler }: MemoisedChildComponentProps) => {
+export const MethodCaller = React.memo(
+  ({ expensiveHandler }: MethodCallerProps) => {
     useEffect(() => {
       console.log(
-        'MemoisedChildComponent re-rendered. The expensiveHandler prop has changed'
+        'MethodCaller re-rendered. The expensiveHandler prop has changed'
       );
     }, [expensiveHandler]);
 
     return (
       <div className="border-2 border-green-500 p-4">
-        <div>MemoisedChildComponent</div>
+        <div className="mb-6">
+          <div className='text-green-500'>Method Caller</div>
+          <div className='text-purple-500'>memoised</div>
+        </div>
         <button
           className="bg-green-500 text-white p-2 rounded-md"
           onClick={expensiveHandler}
