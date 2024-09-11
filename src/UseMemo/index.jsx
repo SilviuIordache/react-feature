@@ -1,13 +1,28 @@
 import { useMemo, useState } from 'react';
+import ChildComponent from './ChildComponent';
 
 export const UseMemo = () => {
   const [number, setNumber] = useState(0);
   const [darkTheme, setDarkTheme] = useState(false);
 
-  const themeStyle = {
-    backgroundColor: darkTheme ? 'black' : 'white',
-    color: darkTheme ? 'white' : 'black',
-  };
+  // useMemo used for reference equality;
+  // Avoids unnecessary re-renders in child components that use the theme style as a prop
+  const themeStyle = useMemo(
+    () => ({
+      backgroundColor: darkTheme ? 'black' : 'white',
+      color: darkTheme ? 'white' : 'black',
+    }),
+    [darkTheme]
+  );
+
+  // const themeStyle = {
+  //   backgroundColor: darkTheme ? 'black' : 'white',
+  //   color: darkTheme ? 'white' : 'black',
+  // };
+
+  // useMemo used for caching the result of a slow function
+  const doubleNumber = useMemo(() => slowFunction(number), [number]);
+  // const doubleNumber = slowFunction(number);
 
   function changeTheme() {
     setDarkTheme(!darkTheme);
@@ -15,15 +30,12 @@ export const UseMemo = () => {
 
   function slowFunction(num) {
     const start = performance.now();
-    for (let i = 0; i < 1000000000; i++) {}
+    for (let i = 0; i < 500000000; i++) {}
 
     const end = performance.now();
     console.log(`Slow function called. Duration: ${end - start} ms`);
     return num * 2;
   }
-
-  // const doubleNumber = slowFunction(number);
-  const doubleNumber = useMemo(() => slowFunction(number), [number]);
 
   return (
     <div style={{ textAlign: 'left' }}>
@@ -41,6 +53,8 @@ export const UseMemo = () => {
       />
 
       <div style={themeStyle}>Double: {doubleNumber} </div>
+
+      <ChildComponent style={themeStyle} />
     </div>
   );
 };
