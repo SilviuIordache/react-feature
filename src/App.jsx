@@ -1,15 +1,19 @@
-import './App.css'
-import { Closure } from './Closure'
-function App() {
+import './App.css';
+import { Closure } from './Closure';
+import { SetInterval } from './UseRef/SetInterval';
+import { UseRefVsUseState } from './UseRef/UseRefVsUseState';
 
+function App() {
   return (
-    <div className="light">
+    <div>
       {/* <ReactLifecycle/> */}
       {/* <UseMemo/> */}
       {/* <UseCallback/> */}
-      <Closure/>
+      {/* <Closure/> */}
+      {/* <SetInterval/> */}
+      <UseRefVsUseState />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
