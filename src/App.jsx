@@ -1,5 +1,6 @@
 import './App.css';
 import { Closure } from './Closure';
+import { CopyByReference } from './CopyByReference';
 import { SetInterval } from './UseRef/SetInterval';
 import { UseRefVsUseState } from './UseRef/UseRefVsUseState';
 
@@ -11,7 +12,8 @@ function App() {
       {/* <UseCallback/> */}
       {/* <Closure/> */}
       {/* <SetInterval/> */}
-      <UseRefVsUseState />
+      {/* <UseRefVsUseState /> */}
+      <CopyByReference />
     </div>
   );
 }
