@@ -5,7 +5,8 @@ const Closure = () => {
   const [count, setCount] = useState(0);
 
   const handleClick = useCallback(() => {
-    setCount((prevCount) => prevCount + 1); // using the functional setState to avoid a stale closure
+    // using the functional setState to avoid a stale closure
+    setCount((prevCount) => prevCount + 1);
   }, []);
 
   return (
