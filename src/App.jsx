@@ -1,10 +1,10 @@
 import './App.css';
-import EditProfile from './UseState/EditProfile';
+import UseContext from './ReactConcepts/UseContext';
 
 function App() {
   return (
     <div>
-      <EditProfile />
+      <UseContext />
     </div>
   );
 }
