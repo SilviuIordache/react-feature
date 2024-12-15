@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { CountDisplayer } from './CountDisplayer';
 import { MethodCaller } from './MethodCaller';
 import { AnimalDisplayer } from './AnimalDisplayer';
@@ -12,15 +12,24 @@ export const UseCallback = () => {
     console.log('expensiveFunction called');
   }, []);
 
+  // const expensiveFunction = () => {
+  //   for (let i = 0; i < 1000000000; i++) {}
+  //   console.log('expensiveFunction called');
+  // };
+
   return (
-    <div className="border-2 border-blue-500 p-4">
-      <h1 className="text-2xl font-bold">UseCallback Parent Component</h1>
+    <div className="border-2 border-white-500 p-4">
+      <h1 className="text-2xl font-bold">Parent Component</h1>
 
       <div className="mt-2 flex justify-center ">
         <div className="text-left w-96">
-          <div className='text-yellow-500'>const [count, setCount] = useState(0)</div>
-          <div className='text-blue-500'>const [animal, setAnimal] = useState('dog')</div>
-          <div className='text-green-500'>{`const expensiveFunction = () => {...}`}</div>
+          <div className="text-yellow-500">
+            const [count, setCount] = useState(0)
+          </div>
+          <div className="text-blue-500">
+            const [animal, setAnimal] = useState('dog')
+          </div>
+          <div className="text-green-500">{`const expensiveFunction = () => {...}`}</div>
         </div>
       </div>
 

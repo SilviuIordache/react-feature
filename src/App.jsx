@@ -1,10 +1,10 @@
 import './App.css';
-import { UseMemo } from './ReactConcepts/UseMemo';
+import { UseCallback } from './ReactConcepts/UseCallback';
 
 function App() {
   return (
     <div>
-      <UseMemo />
+      <UseCallback />
     </div>
   );
 }
