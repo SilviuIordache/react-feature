@@ -5,8 +5,12 @@ const ChildComponent = ({ style }) => {
   useEffect(() => {
     console.log('ChildComponent rendered');
   }, [style]);
-  
-  return <div style={style}>ChildComponent</div>;
+
+  return (
+    <div style={style}>
+      <h1 className="text-2xl font-bold text-green-500">Child component</h1>
+    </div>
+  );
 };
 
 ChildComponent.propTypes = {

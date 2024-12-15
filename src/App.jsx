@@ -1,12 +1,10 @@
 import './App.css';
-import UseRefVsUseState from './ReactConcepts/UseRef/UseRefVsUseState';
-
+import { UseMemo } from './ReactConcepts/UseMemo';
 
 function App() {
   return (
     <div>
-      {/* <UseContext /> */}
-      <UseRefVsUseState/>
+      <UseMemo />
     </div>
   );
 }
