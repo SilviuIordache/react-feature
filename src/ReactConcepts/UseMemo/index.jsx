@@ -1,9 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import ChildComponent from './ChildComponent';
 
 export const UseMemo = () => {
   const [number, setNumber] = useState(0);
   const [darkTheme, setDarkTheme] = useState(false);
+
+  useEffect(() => {
+    console.log('Parent component re-rendered');
+  });
 
   // useMemo used for reference equality;
   // Avoids unnecessary re-renders in child components that use the theme style as a prop

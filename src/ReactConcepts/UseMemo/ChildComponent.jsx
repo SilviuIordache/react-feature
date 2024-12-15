@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const ChildComponent = ({ style }) => {
   useEffect(() => {
-    console.log('ChildComponent rendered');
+    console.log('ChildComponent re-rendered');
   }, [style]);
 
   return (
