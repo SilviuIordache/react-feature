@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function EditProfile() {
+export default function UseStateExample() {
   const [firstName, setFirstName] = useState('Jane');
   const [lastName, setLastName] = useState('Jacobs');
   const [editMode, setEditMode] = useState(false);

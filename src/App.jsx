@@ -1,12 +1,12 @@
 import './App.css';
-import FlippySquares from './ReactArt/FlippySquares';
-import UseContext from './ReactConcepts/UseContext';
+import UseRefVsUseState from './ReactConcepts/UseRef/UseRefVsUseState';
+
 
 function App() {
   return (
     <div>
       {/* <UseContext /> */}
-      <FlippySquares/>
+      <UseRefVsUseState/>
     </div>
   );
 }
