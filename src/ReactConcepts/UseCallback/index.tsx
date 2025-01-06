@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { AnimalDisplayer } from './AnimalDisplayer';
 import { CountDisplayer } from './CountDisplayer';
 import { MethodCaller } from './MethodCaller';
-import { AnimalDisplayer } from './AnimalDisplayer';
 
 export const UseCallback = () => {
   const [count, setCount] = useState(0);
@@ -19,21 +19,13 @@ export const UseCallback = () => {
 
   return (
     <div className="border-2 border-white-500 p-4">
-      <h1 className="text-2xl font-bold">Parent Component</h1>
+      <h1 className="text-2xl font-bold mb-24">Parent Component</h1>
 
       <div className="mt-2 flex justify-center ">
-        <div className="text-left w-96">
-          <div className="text-yellow-500">
-            const [count, setCount] = useState(0)
-          </div>
-          <div className="text-blue-500">
-            const [animal, setAnimal] = useState('dog')
-          </div>
-          <div className="text-green-500">{`const expensiveFunction = () => {...}`}</div>
-        </div>
+        <div className="text-left w-96"></div>
       </div>
 
-      <div className="flex gap-2 justify-center mt-6">
+      <div className="grid grid-cols-3 gap-4 mt-6">
         <button
           className="bg-yellow-500 text-white p-2 rounded-md"
           onClick={() => setCount(count + 1)}
@@ -49,7 +41,23 @@ export const UseCallback = () => {
         </button>
       </div>
 
-      <div className="flex gap-4 mt-6">
+      <div className="grid grid-cols-3 gap-4 mt-6">
+        <div>
+          <div className="text-yellow-500">
+            const [count, setCount] = useState(0)
+          </div>
+        </div>
+
+        <div>
+          <div className="text-blue-500">
+            const [animal, setAnimal] = useState('dog')
+          </div>
+        </div>
+
+        <div className="text-green-500">{`const expensiveFunction = () => {...}`}</div>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 mt-6">
         <CountDisplayer count={count} />
 
         <AnimalDisplayer animal={animal} />

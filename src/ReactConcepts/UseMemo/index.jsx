@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import ChildComponent from './ChildComponent';
 
-export const UseMemo = () => {
+export default function UseMemo () {
   const [number, setNumber] = useState(0);
   const [darkTheme, setDarkTheme] = useState(false);
 
