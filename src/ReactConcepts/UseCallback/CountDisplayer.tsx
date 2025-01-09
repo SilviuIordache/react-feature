@@ -10,7 +10,7 @@ export const CountDisplayer = ({ count }: { count: number }) => {
 
   return (
     <div className="border-2 border-yellow-500 p-4 flex flex-col justify-between">
-      <RenderDisplayer showRerender={showRerender} />
+      {/* <RenderDisplayer showRerender={showRerender} /> */}
 
       <div className="text-yellow-500">Count Displayer</div>
 

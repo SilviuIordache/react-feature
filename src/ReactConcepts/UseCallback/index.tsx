@@ -11,20 +11,25 @@ export const UseCallback = () => {
   const [count, setCount] = useState(0);
   const [animal, setAnimal] = useState('dog');
 
-  // TODO: rename this; its irrelevant if the function is expensive or not
-  const expensiveFunction = useCallback(() => {
-    for (let i = 0; i < 1000000000; i++) {}
-    console.log('expensiveFunction called');
-  }, []);
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
 
-  // const expensiveFunction = () => {
-  //   for (let i = 0; i < 1000000000; i++) {}
-  //   console.log('expensiveFunction called');
-  // };
+  const changeAnimal = () => {
+    setAnimal(animal === 'dog' ? 'cat' : 'dog');
+  };
+
+  // const methodHandler = useCallback(() => {
+  //   console.log('methodHandler called');
+  // }, []);
+
+  const methodHandler = () => {
+    console.log('methodHandler called');
+  };
 
   return (
     <div className="border-2 border-white-500 p-4">
-      <RenderDisplayer showRerender={showRerender} />
+      {/* <RenderDisplayer showRerender={showRerender} /> */}
       <h1 className="text-2xl font-bold mb-24">Parent Component</h1>
 
       <div className="mt-2 flex justify-center ">
@@ -34,14 +39,14 @@ export const UseCallback = () => {
       <div className="grid grid-cols-3 gap-4 mt-6">
         <button
           className="bg-yellow-500 text-white p-2 rounded-md"
-          onClick={() => setCount(count + 1)}
+          onClick={increaseCount}
         >
           Increase count
         </button>
 
         <button
           className="bg-blue-500 text-white p-2 rounded-md"
-          onClick={() => setAnimal(animal === 'dog' ? 'cat' : 'dog')}
+          onClick={changeAnimal}
         >
           Change animal
         </button>
@@ -60,7 +65,7 @@ export const UseCallback = () => {
           </div>
         </div>
 
-        <div className="text-green-500">{`const expensiveFunction = () => {...}`}</div>
+        <div className="text-green-500">{`const methodCaller = () => {...}`}</div>
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-6">
@@ -68,7 +73,7 @@ export const UseCallback = () => {
 
         <AnimalDisplayer animal={animal} />
 
-        <MethodCaller expensiveHandler={expensiveFunction} />
+        <MethodCaller methodHandler={methodHandler} />
       </div>
     </div>
   );
