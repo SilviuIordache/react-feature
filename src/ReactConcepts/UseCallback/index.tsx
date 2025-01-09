@@ -2,11 +2,16 @@ import React, { useCallback, useState } from 'react';
 import { AnimalDisplayer } from './AnimalDisplayer';
 import { CountDisplayer } from './CountDisplayer';
 import { MethodCaller } from './MethodCaller';
+import useRenderIndicator from '../../hooks/useRenderIndicator';
+import { RenderDisplayer } from '../../hooks/RenderDisplayer';
 
 export const UseCallback = () => {
+  const showRerender = useRenderIndicator();
+
   const [count, setCount] = useState(0);
   const [animal, setAnimal] = useState('dog');
 
+  // TODO: rename this; its irrelevant if the function is expensive or not
   const expensiveFunction = useCallback(() => {
     for (let i = 0; i < 1000000000; i++) {}
     console.log('expensiveFunction called');
@@ -19,6 +24,7 @@ export const UseCallback = () => {
 
   return (
     <div className="border-2 border-white-500 p-4">
+      <RenderDisplayer showRerender={showRerender} />
       <h1 className="text-2xl font-bold mb-24">Parent Component</h1>
 
       <div className="mt-2 flex justify-center ">

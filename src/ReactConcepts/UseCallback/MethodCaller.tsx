@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useRenderIndicator from '../../hooks/useRenderIndicator';
+import { RenderDisplayer } from '../../hooks/RenderDisplayer';
 
 interface MethodCallerProps {
   expensiveHandler: () => void;
@@ -17,12 +18,12 @@ export const MethodCaller = React.memo(
 
     return (
       <div className="border-2 border-green-500 p-4">
+        <RenderDisplayer showRerender={showRerender} />
+
         <div className="mb-6">
           <div className="text-green-500">Method Caller</div>
-          <div className="text-purple-500">memoised</div>
+          <div className="text-purple-500">React.memo</div>
         </div>
-
-        {showRerender && <div>Re-render</div>}
 
         <button
           className="bg-green-500 text-white p-2 rounded-md"

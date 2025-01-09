@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useRenderIndicator from '../../hooks/useRenderIndicator';
+import { RenderDisplayer } from '../../hooks/RenderDisplayer';
 export const CountDisplayer = ({ count }: { count: number }) => {
   const showRerender = useRenderIndicator();
 
@@ -9,8 +10,9 @@ export const CountDisplayer = ({ count }: { count: number }) => {
 
   return (
     <div className="border-2 border-yellow-500 p-4 flex flex-col justify-between">
+      <RenderDisplayer showRerender={showRerender} />
+
       <div className="text-yellow-500">Count Displayer</div>
-      {showRerender && <div>Re-render</div>}
 
       <p> {count}</p>
     </div>
