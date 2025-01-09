@@ -4,6 +4,7 @@ import { CountDisplayer } from './CountDisplayer';
 import { MethodCaller } from './MethodCaller';
 import useRenderIndicator from '../../hooks/useRenderIndicator';
 import { RenderDisplayer } from '../../hooks/RenderDisplayer';
+import { CustomButton } from '../../components/CustomButton';
 
 export const UseCallback = () => {
   const showRerender = useRenderIndicator();
@@ -37,19 +38,12 @@ export const UseCallback = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-6">
-        <button
-          className="bg-yellow-500 text-white p-2 rounded-md"
-          onClick={increaseCount}
-        >
+        <CustomButton onClick={increaseCount} color="yellow">
           Increase count
-        </button>
-
-        <button
-          className="bg-blue-500 text-white p-2 rounded-md"
-          onClick={changeAnimal}
-        >
+        </CustomButton>
+        <CustomButton onClick={changeAnimal} color="blue">
           Change animal
-        </button>
+        </CustomButton>
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-6">

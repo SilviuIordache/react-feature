@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import useRenderIndicator from '../../hooks/useRenderIndicator';
 import { RenderDisplayer } from '../../hooks/RenderDisplayer';
+import { CustomButton } from '../../components/CustomButton';
 
 interface MethodCallerProps {
   methodHandler: () => void;
@@ -25,12 +26,9 @@ export const MethodCaller = React.memo(
           {/* <div className="text-purple-500">React.memo</div> */}
         </div>
 
-        <button
-          className="bg-green-500 text-white p-2 rounded-md"
-          onClick={methodHandler}
-        >
+        <CustomButton onClick={methodHandler} color="green">
           Call Method
-        </button>
+        </CustomButton>
       </div>
     );
   }
